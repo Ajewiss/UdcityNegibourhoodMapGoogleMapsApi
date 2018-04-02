@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neighborhood Map</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- set up the navbar -->
+    <nav class="navbar navbar-inverse">
+        <button class="navbar-toggler hidden-md-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbarSM">
+            &#9776;
+        </button>
+        <div class="dropdown-menu" id="exCollapsingNavbarSM">
+            <div class="search" id="search">
+                <input placeholder="Search for location" class="search-box" id="search-box" data-bind="textInput: searchTerm, valueUpdate: 'afterkeydown'">
+            </div>
+            <ul class="nav navbar-nav pull-md-right" id="results" data-bind="foreach: filteredList">
+                <li class="place" id="place" data-bind="text: name, click: bounce"></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Displays Google Map -->
+    <div class="map" id="map"></div>
+    <main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- start the application -->
+        <script src="js/app.js"></script>
+        <script async defer 
+            src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBMRyhHXiVter1hwIVvgXPUU2NVA0rTBkE&callback=initMap" 
+            onerror="errorMap()"></script>
+    </main>
+</body>
+</html>

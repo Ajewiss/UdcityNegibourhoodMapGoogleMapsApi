@@ -1,0 +1,32 @@
+html, body, #map {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    flex: 100%;
+}
+
+body {
+    font-size: 14px;
+}
+
+#navbar {
+    height: 100px;
+}
+
+.place{
+    color: darkblue;
+    padding-left: 20px;
+}
+
+/* set up for a small screen */
+@media only screen and (max-width: 768px) {
+    .search {
+        top: 10px;
+        padding: 7px;
+        width: 50%;
+    }
+
+    #navbar {
+        flex: 1;
+    }
+}
